@@ -17,7 +17,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
     return ['target', 'action'];
   }
 
-  static get _targetElementId() {
+  static get _targetElementName() {
     return 'hidden-form-target';
   }
 
@@ -26,11 +26,11 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
   }
 
   get _targetElement() {
-    return this.querySelector(`iframe[name="${VlForm._targetElementId}"]`);
+    return this.querySelector(`iframe[name="${VlForm._targetElementName}"]`);
   }
 
   _getTargetElementTemplate() {
-    return this._template(`<iframe name="${VlForm._targetElementId}" width="0" height="0" border="0" hidden></iframe>`);
+    return this._template(`<iframe name="${VlForm._targetElementName}" width="0" height="0" border="0" hidden></iframe>`);
   }
 
   _process() {
@@ -42,7 +42,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
   }
 
   _addTargetElement() {
-    this.setAttribute('target', VlForm._targetElementId);
+    this.setAttribute('target', VlForm._targetElementName);
     this.appendChild(this._getTargetElementTemplate());
   }
 
@@ -52,7 +52,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
   }
 
   _targetChangedCallback(oldValue, newValue) {
-    if (newValue && newValue != VlForm._targetElementId && this._targetElement) {
+    if (newValue && newValue != VlForm._targetElementName && this._targetElement) {
       this._removeTargetElement();
     }
   }
