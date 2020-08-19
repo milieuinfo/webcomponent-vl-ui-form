@@ -1,0 +1,52 @@
+{
+	"name": "vl-ui-form",
+	"version": "0.0.0",
+	"description": "Formulier element",
+	"author": "DIDM",
+	"license": "MIT",
+	"main": "./src/index.js",
+	"exports": {
+		"require": "./index.js",
+		"import": "./src/index.js",
+		"node": "./index.js",
+		"default": "./index.js"
+	},
+	"homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-form#readme",
+	"bugs": {
+		"url": "https://github.com/milieuinfo/webcomponent-vl-ui-form/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-form.git"
+	},
+	"publishConfig": {
+		"registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
+	},
+	"scripts": {
+		"prepare": "npm update --dev vl-ui-util && npm run prepare:util",
+		"prepare:util": "npm explore vl-ui-util -- npm run util",
+		"test": "npm explore vl-ui-util -- npm run test:component",
+		"test:grid": "npm explore vl-ui-util -- npm run test:component:grid",
+		"test:unit": "npm explore vl-ui-util -- npm run test:component:unit",
+		"test:unit:grid": "npm explore vl-ui-util -- npm run test:component:unit:grid",
+		"test:e2e": "npm explore vl-ui-util -- npm run test:component:e2e",
+		"test:e2e:grid": "npm explore vl-ui-util -- npm run test:component:e2e:grid",
+		"release": "npm explore vl-ui-util -- npm run release",
+		"release:prepare": "npm explore vl-ui-util -- npm run release-component:prepare $(pwd) form",
+		"release:testless": "np --yolo",
+		"demo": "http-server"
+	},
+	"dependencies": {
+		"vl-ui-core": "^5.6.2"
+	},
+	"peerDependencies": {
+		"vl-ui-core": "^5.6.2"
+	},
+	"devDependencies": {
+		"vl-ui-form-grid": "^3.0.4",
+		"vl-ui-form-message": "^5.0.3",
+		"vl-ui-input-field": "^3.2.2",
+		"vl-ui-button": "^5.0.5",
+		"vl-ui-util": "^5.2.10"
+	}
+}
