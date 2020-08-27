@@ -58,6 +58,11 @@
           should.not.exist(iFrame);
         });
       });
+
+      test('het form element bevat een about:blank action attribuut', () => {
+        const form = fixture('vl-form-fixture');
+        assert.equal(form.getAttribute('action'), 'about:blank');
+      });
     });
   </script>
 </body>
