@@ -30,7 +30,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
   }
 
   _getTargetElementTemplate() {
-    return this._template(`<iframe name="${VlForm._targetElementName}" action="about:blank" width="0" height="0" border="0" hidden></iframe>`);
+    return this._template(`<iframe name="${VlForm._targetElementName}" width="0" height="0" border="0" hidden></iframe>`);
   }
 
   _process() {
@@ -43,6 +43,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
 
   _addTargetElement() {
     this.setAttribute('target', VlForm._targetElementName);
+    this.setAttribute('action', 'about:blank');
     this.appendChild(this._getTargetElementTemplate());
   }
 

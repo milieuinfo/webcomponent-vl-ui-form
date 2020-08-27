@@ -59,12 +59,9 @@
         });
       });
 
-      test('bevat een about:blank action attribuut', () => {
-        ['target', 'action'].forEach((attribute) => {
-          const form = fixture('vl-form-fixture');
-          const iFrame = form.querySelector('iframe');
-          assert.equal(iFrame.getAttribute('action'), 'about:blank');
-        });
+      test('het form element bevat een about:blank action attribuut', () => {
+        const form = fixture('vl-form-fixture');
+        assert.equal(form.getAttribute('action'), 'about:blank');
       });
     });
   </script>
