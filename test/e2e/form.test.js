@@ -1,15 +1,18 @@
-const {assert, driver, By} = require('vl-ui-core').Test.Setup;
+const {assert, getDriver, By} = require('vl-ui-core').Test.Setup;
 const VlFormPage = require('./pages/vl-form.page');
 const {VlInputField} = require('vl-ui-input-field').Test;
 
 describe('vl-form', async () => {
-  const vlFormPage = new VlFormPage(driver);
+  let driver;
+  let vlFormPage;
 
   before(() => {
+    driver = getDriver();
+    vlFormPage = new VlFormPage(driver);
     return vlFormPage.load();
   });
 
-  it('Als gebruiker kan ik een formulier submitten zonder dat de URL aangepast wordt', async () => {
+  it('als gebruiker kan ik een formulier submitten zonder dat de URL aangepast wordt', async () => {
     const form = await vlFormPage.getForm();
     const nameInput = await new VlInputField(driver, await form.findElement(By.css('#name')));
     const surnameInput = await new VlInputField(driver, await form.findElement(By.css('#surname')));
