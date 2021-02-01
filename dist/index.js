@@ -1,3 +1,1 @@
-module.exports = {
-  VlForm: require('../dist/vl-form.src.js').VlForm,
-};
+export * from '../dist/vl-form.src.js';
