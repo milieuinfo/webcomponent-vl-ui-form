@@ -222,11 +222,6 @@ export const formMixin = (base) => class extends base {
     }
   }
 
-  getFormInputs(name) {
-    return this.formInputs
-        .filter((input) => input.name === name);
-  }
-
   async submitForm({valid, invalid, validator}) {
     const formData = this.formData;
     this.formInputs.forEach((input) => {
