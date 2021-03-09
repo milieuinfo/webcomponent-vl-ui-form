@@ -203,7 +203,7 @@ export const formMixin = (base) => class extends base {
   set formData(formData) {
     this.formInputs.forEach((input) => {
       const value = formData[input.name];
-      __setValue(input, value);
+      this.__setValue(input, value);
     });
   }
 
