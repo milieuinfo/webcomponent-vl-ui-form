@@ -274,7 +274,7 @@ export const formMixin = (base) => class extends base {
       if (!firstError && violations.isInvalid()) {
         firstError = input;
       }
-      input.errors = violations.violations;
+      input.showErrors(violations.violations);
     });
     if (firstError) {
       firstError.focus();
@@ -285,7 +285,7 @@ export const formMixin = (base) => class extends base {
     this.formInputs
         .filter((input) => input.name === name)
         .forEach((input) => {
-          input.errors = errors;
+          input.showErrors(errors);
         });
   }
 
