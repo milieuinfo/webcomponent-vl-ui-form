@@ -25,7 +25,10 @@
         <form is="vl-form">
           <div is="vl-form-grid" data-vl-is-stacked>
             <div is="vl-form-column" data-vl-size="3">
-              <label is="vl-form-label" for="email" data-vl-block>Email</label>
+              <label is="vl-form-label" for="email" data-vl-block>
+                Email
+                <span is="vl-form-annotation" id="form-annotation">(verplicht)</span>
+              </label>
             </div>
             <div is="vl-form-column" data-vl-size="9">
               <input id="email" name="email" is="vl-input-field" autocomplete="email" data-vl-block data-required="true" data-vl-error-message="Gelieve een email in te vullen" data-vl-error-placeholder="email-error">
@@ -33,7 +36,10 @@
             </div>
 
             <div is="vl-form-column" data-vl-size="3">
-              <label is="vl-form-label" for="name" data-vl-block>Voornaam</label>
+              <label is="vl-form-label" for="name" data-vl-block>
+                Voornaam
+                <span is="vl-form-annotation" id="form-annotation">(verplicht)</span>
+              </label>
             </div>
             <div is="vl-form-column" data-vl-size="9">
               <input id="name" name="name" is="vl-input-field" autocomplete="given-name" data-vl-block data-required="true" data-vl-error-message="Gelieve een voornaam in te vullen" data-vl-error-placeholder="name-error">
@@ -41,7 +47,7 @@
             </div>
 
             <div is="vl-form-column" data-vl-size="3">
-              <label is="vl-form-label" for="surname" data-vl-block>Naam (optioneel)</label>
+              <label is="vl-form-label" for="surname" data-vl-block>Naam</label>
             </div>
             <div is="vl-form-column" data-vl-size="9">
               <input id="surname" name="surname" is="vl-input-field" autocomplete="family-name" data-vl-block>
