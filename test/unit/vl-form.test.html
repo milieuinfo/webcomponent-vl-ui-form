@@ -63,6 +63,11 @@
         const form = fixture('vl-form-fixture');
         assert.equal(form.getAttribute('action'), '');
       });
+
+      test('de HTML validatie wordt uitgeschakeld om geen conflict te veroorzaken met de achterliggende validatie code', () => {
+        const form = fixture('vl-form-fixture');
+        assert.isTrue(form.hasAttribute('novalidate'));
+      });
     });
   </script>
 </body>
