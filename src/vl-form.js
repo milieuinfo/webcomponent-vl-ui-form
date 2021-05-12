@@ -39,6 +39,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
     if (targetAttributeIsMissing && actionAttributeIsMissing) {
       this._addTargetElement();
     }
+    this._disableNativeValidation();
   }
 
   _addTargetElement() {
@@ -62,6 +63,10 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
     if (newValue && this._targetElement) {
       this._removeTargetElement();
     }
+  }
+
+  _disableNativeValidation() {
+    this.setAttribute('novalidate', '');
   }
 }
 
