@@ -68,6 +68,11 @@
         const form = fixture('vl-form-fixture');
         assert.isTrue(form.hasAttribute('novalidate'));
       });
+
+      test('de formulier class wordt toegevoegd', () => {
+        const form = fixture('vl-form-fixture');
+        assert.include([...form.classList], 'vl-form');
+      });
     });
   </script>
 </body>
