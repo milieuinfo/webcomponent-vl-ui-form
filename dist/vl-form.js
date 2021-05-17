@@ -23,6 +23,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
 
   connectedCallback() {
     this._process();
+    this._addClasses();
   }
 
   get _targetElement() {
@@ -67,6 +68,10 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
 
   _disableNativeValidation() {
     this.setAttribute('novalidate', '');
+  }
+
+  _addClasses() {
+    this.classList.add('vl-form');
   }
 }
 
