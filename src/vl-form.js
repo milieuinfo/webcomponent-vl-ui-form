@@ -28,6 +28,10 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
     this._addClasses();
   }
 
+  get hasValidation() {
+    return this.hasAttribute('data-validate-form');
+  }
+
   get _targetElement() {
     return this.querySelector(`iframe[name="${VlForm._targetElementName}"]`);
   }
