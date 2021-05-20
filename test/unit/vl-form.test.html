@@ -73,6 +73,15 @@
         const form = fixture('vl-form-fixture');
         assert.include([...form.classList], 'vl-form');
       });
+
+      test('alleen wanneer het validate-form attribuut aanwezig is, zal een validatie attribuut toegevoegd worden dat de validatie activeert', () => {
+        const form = fixture('vl-form-fixture');
+        assert.isFalse(form.hasAttribute('data-validate-form'));
+        form.setAttribute('data-vl-validate', '');
+        assert.isTrue(form.hasAttribute('data-validate-form'));
+        form.removeAttribute('data-vl-validate');
+        assert.isFalse(form.hasAttribute('data-validate-form'));
+      });
     });
   </script>
 </body>
