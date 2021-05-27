@@ -63,6 +63,25 @@
         const form = fixture('vl-form-fixture');
         assert.equal(form.getAttribute('action'), '');
       });
+
+      test('de HTML validatie wordt uitgeschakeld om geen conflict te veroorzaken met de achterliggende validatie code', () => {
+        const form = fixture('vl-form-fixture');
+        assert.isTrue(form.hasAttribute('novalidate'));
+      });
+
+      test('de formulier class wordt toegevoegd', () => {
+        const form = fixture('vl-form-fixture');
+        assert.include([...form.classList], 'vl-form');
+      });
+
+      test('alleen wanneer het validate-form attribuut aanwezig is, zal een validatie attribuut toegevoegd worden dat de validatie activeert', () => {
+        const form = fixture('vl-form-fixture');
+        assert.isFalse(form.hasAttribute('data-validate-form'));
+        form.setAttribute('data-vl-validate', '');
+        assert.isTrue(form.hasAttribute('data-validate-form'));
+        form.removeAttribute('data-vl-validate');
+        assert.isFalse(form.hasAttribute('data-validate-form'));
+      });
     });
   </script>
 </body>
