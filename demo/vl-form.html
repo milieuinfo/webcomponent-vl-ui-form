@@ -6,6 +6,7 @@
     <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-form-grid/dist/vl-form-grid.js"></script>
     <script type="module" src="/node_modules/vl-ui-form-message/dist/vl-form-message.js"></script>
+    <script type="module" src="/node_modules/vl-ui-form-validation/dist/vl-form-validation-all.js"></script>
     <script type="module" src="/node_modules/vl-ui-input-field/dist/vl-input-field.js"></script>
     <script type="module" src="/node_modules/vl-ui-action-group/dist/vl-action-group.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
@@ -29,7 +30,7 @@
 	<body is="vl-body">
     <vl-demo-page data-vl-webcomponent="vl-form">
       <vl-demo data-vl-title="Form">
-        <form is="vl-form">
+        <form is="vl-form" data-vl-validate>
           <div is="vl-form-group">
             <div is="vl-form-grid" data-vl-is-stacked>
               <div is="vl-form-column" data-vl-size="3">
@@ -39,7 +40,7 @@
                 </label>
               </div>
               <div is="vl-form-column" data-vl-size="9">
-                <input id="name" name="name" autocomplete="name" is="vl-input-field" data-vl-block data-required="true" data-vl-error-message="Te weinig tekens" data-vl-error-placeholder="name-error">
+                <input id="name" name="name" autocomplete="name" is="vl-input-field" data-vl-block data-vl-required data-vl-error-message="Te weinig tekens" data-vl-error-placeholder="name-error">
                 <p is="vl-form-validation-message" data-vl-error data-vl-error-id="name-error"></p>
               </div>
 
