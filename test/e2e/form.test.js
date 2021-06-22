@@ -12,6 +12,10 @@ describe('vl-form', async () => {
     return vlFormPage.load();
   });
 
+  it('WCAG', async () => {
+    await assert.eventually.isFalse(vlFormPage.hasWcagIssues());
+  });
+
   it('als gebruiker kan ik een formulier submitten zonder dat de URL aangepast wordt', async () => {
     const form = await vlFormPage.getForm();
     const nameInput = await new VlInputField(driver, await form.findElement(By.css('#name')));
